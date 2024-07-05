@@ -31,6 +31,50 @@ Run the flash command to flash the image in nvme drive
 
 
 
+__________________________________________________
+
+### Kernel Customization 
+[Source](https://docs.nvidia.com/jetson/archives/r36.3/DeveloperGuide/SD/Kernel/KernelCustomization.html)
+
+
+##### Install Prerequisites
+```
+sudo apt install git-core
+sudo apt install build-essential bc
+```
+
+
+##### Setup Toolchain
+Download Bootlin Toolchain. For v36.3[https://developer.nvidia.com/downloads/embedded/l4t/r36_release_v3.0/toolchain/aarch64--glibc--stable-2022.08-1.tar.bz2]
+
+
+```
+mkdir $HOME/l4t-gcc
+cd $HOME/l4t-gcc
+tar xf aarch64--glibc--stable-2022.08-1.tar.bz2
+export CROSS_COMPILE=$HOME/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
+```
+
+##### Get kernel Sources
+
+To get the kernel source, run the source_sync.sh script:
+
+$ cd <install-path>/Linux_for_Tegra/source
+$ ./source_sync.sh -k -t <release-tag>
+The correct release-tag is specified in the release notes([source](https://docs.nvidia.com/jetson/archives/r36.3/ReleaseNotes/Jetson_Linux_Release_Notes_r36.3.pdf)) . This tag name syncs the sources to the source revision from which the release binary was built.
+
+```
+cd ~/Documents/Linux_for_Tegra/source
+./source_sync.sh -k -t jetson_36.3
+```
+
+##### Building the Jetson linux Kernel
+```
+cd ~/Documents/Linux_for_Tegra/source
+./generic_rt_build.sh "enable"
+export CROSS_COMPILE=$HOME/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
+make -C kernel
+```
 
 Sources: 
 1. Quick Start guides[https://docs.nvidia.com/jetson/archives/r35.4.1/DeveloperGuide/text/IN/QuickStart.html#in-quickstart]
