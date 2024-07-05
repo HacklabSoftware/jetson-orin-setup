@@ -76,6 +76,22 @@ export CROSS_COMPILE=$HOME/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-
 make -C kernel
 ```
 
+##### Building the Nvidia Out-of-Tree Modules
+```
+cd ~/Documents/Linux_for_Tegra/source
+export IGNORE_PREEMPT_RT_PRESENCE=1
+export CROSS_COMPILE=$HOME/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
+export KERNEL_HEADERS=$PWD/kernel/kernel-jammy-src
+make modules
+
+export INSTALL_MOD_PATH=~/Documents/Linux_for_Tegra/rootfs/
+sudo -E make modules_install
+
+cd ~/Documents/Linux_for_Tegra/
+sudo ./tools/l4t_update_initrd.sh
+```
+
+
 Sources: 
 1. Quick Start guides[https://docs.nvidia.com/jetson/archives/r35.4.1/DeveloperGuide/text/IN/QuickStart.html#in-quickstart]
 2. Flashing support[https://docs.nvidia.com/jetson/archives/r35.4.1/DeveloperGuide/text/SD/FlashingSupport.html#sd-flashingsupport-flashshorinnxnano]
