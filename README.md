@@ -70,6 +70,11 @@ cd ~/Documents/Linux_for_Tegra/source
 
 ##### Building the Jetson linux Kernel
 ```
+sudo apt-get update                                                                      
+sudo apt-get install flex
+sudo apt-get update                                                                            130 ↵
+sudo apt-get install bison
+sudo apt install libncurses5-dev libncursesw5-dev
 cd ~/Documents/Linux_for_Tegra/source
 ./generic_rt_build.sh "enable"
 export CROSS_COMPILE=$HOME/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
