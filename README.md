@@ -96,6 +96,16 @@ cd ~/Documents/Linux_for_Tegra/
 sudo ./tools/l4t_update_initrd.sh
 ```
 
+##### Building the DTBs
+
+```
+cd ~/Documents/Linux_for_Tegra/source
+export CROSS_COMPILE=$HOME/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
+export KERNEL_HEADERS=$PWD/kernel/kernel-jammy-src
+make dtbs
+cp nvidia-oot/device-tree/platform/generic-dts/dtbs/* \
+     ~/Documents/Linux_for_Tegra/kernel/dtb/
+```
 
 Sources: 
 1. Quick Start guides[https://docs.nvidia.com/jetson/archives/r35.4.1/DeveloperGuide/text/IN/QuickStart.html#in-quickstart]
