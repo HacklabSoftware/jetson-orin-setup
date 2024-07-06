@@ -96,7 +96,7 @@ cd ~/Documents/Linux_for_Tegra/
 sudo ./tools/l4t_update_initrd.sh
 ```
 
-##### Building the DTBs
+##### Building the DTBs (Device Tree)
 
 ```
 cd ~/Documents/Linux_for_Tegra/source
