@@ -79,6 +79,11 @@ cd ~/Documents/Linux_for_Tegra/source
 ./generic_rt_build.sh "enable"
 export CROSS_COMPILE=$HOME/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
 make -C kernel
+
+export INSTALL_MOD_PATH=~/Documents/Linux_for_Tegra/rootfs/
+sudo -E make install -C kernel
+cp kernel/kernel-jammy-src/arch/arm64/boot/Image \
+  ~/Documents/Linux_for_Tegra/kernel/Image
 ```
 
 ##### Building the Nvidia Out-of-Tree Modules
