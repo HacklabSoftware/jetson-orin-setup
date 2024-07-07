@@ -72,7 +72,7 @@ cd ~/Documents/Linux_for_Tegra/source
 ```
 sudo apt-get update                                                                      
 sudo apt-get install flex
-sudo apt-get update                                                                            130 ↵
+sudo apt-get update                                                                            
 sudo apt-get install bison
 sudo apt install libncurses5-dev libncursesw5-dev
 cd ~/Documents/Linux_for_Tegra/source
