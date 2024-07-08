@@ -69,7 +69,7 @@ cd ~/Documents/Linux_for_Tegra/source
 ```
 
 
-##### Enabling Wireguard
+##### Enabling Wireguard in kernel
 Go to kernel/kernel-jammy-src and use menuconfig to edit the settings and save it in a config file for example wireguard.config. Then use the config scripts to create defconfig
 ```
 cd ~/Documents/Linux_for_Tegra/source/kernel/kernel-jammy-src
