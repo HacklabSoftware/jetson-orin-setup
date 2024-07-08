@@ -76,6 +76,12 @@ cd ~/Documents/Linux_for_Tegra/source/kernel/kernel-jammy-src
 make menuconfig
 ./scripts/config --file "arch/arm64/configs/defconfig" --enable wireguard.config
 ```
+defconfig will have entries like:
+```
+CONFIG_WIREGUARD=m
+CONFIG_WIREGUARD_DEBUG=y
+CONFIG_WIREGUARD.CONFIG=y
+```
 
 ##### Building the Jetson linux Kernel
 ```
