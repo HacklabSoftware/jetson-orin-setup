@@ -68,6 +68,15 @@ cd ~/Documents/Linux_for_Tegra/source
 ./source_sync.sh -k -t jetson_36.3
 ```
 
+
+##### Enabling Wireguard
+Go to kernel/kernel-jammy-src and use menuconfig to edit the settings and save it in a config file for example wireguard.config. Then use the config scripts to create defconfig
+```
+cd ~/Documents/Linux_for_Tegra/source/kernel/kernel-jammy-src
+make menuconfig
+./scripts/config --file "arch/arm64/configs/defconfig" --enable wireguard.config
+```
+
 ##### Building the Jetson linux Kernel
 ```
 sudo apt-get update                                                                      
