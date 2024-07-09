@@ -47,7 +47,6 @@ sudo apt install build-essential bc
 ##### Setup Toolchain
 Download Bootlin Toolchain. For v36.3[https://developer.nvidia.com/downloads/embedded/l4t/r36_release_v3.0/toolchain/aarch64--glibc--stable-2022.08-1.tar.bz2]
 
-
 ```
 mkdir $HOME/l4t-gcc
 cd $HOME/l4t-gcc
@@ -82,6 +81,8 @@ CONFIG_WIREGUARD=m
 CONFIG_WIREGUARD_DEBUG=y
 CONFIG_WIREGUARD.CONFIG=y
 ```
+Similar configuration can be done for other key settings in the config like for enabling usb 4G dongle make sure that all configurations containing RNDIS and network drivers for that particular board are added.
+
 
 ##### Building the Jetson linux Kernel
 ```
